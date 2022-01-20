@@ -204,7 +204,7 @@
     ```
 14. [可选]修改gitweb.conf
     ```
-   # path to git projects (<project>.git)
+    #path to git projects (<project>.git)
 	$projectroot = "/data/git";
 
 	# directory to use for temp files
