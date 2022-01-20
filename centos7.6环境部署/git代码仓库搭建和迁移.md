@@ -124,20 +124,20 @@
         ;;
     esac
    ```
-   
-   8. 设置fcgiwrap权限并启动fcgiwrap
+
+8. 设置fcgiwrap权限并启动fcgiwrap
    ```
    chmod a+x /etc/init.d/fcgiwrap
    chkconfig --level 35 fcgiwrap on
    /etc/init.d/fcgiwrap start
    ```
    -----
-   9.  配置代码仓库访问地址，nginx配置
+9.  配置代码仓库访问地址，nginx配置
    ```
    cd /usr/local/nginx/conf/servers
    vi gitrepo.com
    ```
-   10. gitrepo.com配置如下（路径，名称可根据自己项目修改）
+10. gitrepo.com配置如下（路径，名称可根据自己项目修改）
    > 配置参考 [gitrepo.com](../files/gitrepo.com)
    ```
    server {
@@ -182,27 +182,27 @@
     }
    ```
 
-   11. 修改nginx.conf中worker进程所有者 
-       ```
-       user nginx; #确保user用户拥有权限调用fastcgi
-	   worker_processes 1;
-       ```    
-   12. 安装http-tools并添加认证用户（pass.db，nginx访问有认证）
-       ```
-       yum -y install httpd-tools
-       cd /usr/local/nginx/conf
-       htpasswd -c pass.db guestUser #确认密码，创建guestUser
-       # htpasswd -b pass.db user1 passwd1 #向认证文件中追加用户user1
-       # htpasswd -D pass.db user1 #从认证文件中删除指定的用户 
-       ```
+11. 修改nginx.conf中worker进程所有者 
+    ```
+    user nginx; #确保user用户拥有权限调用fastcgi
+    worker_processes 1;
+    ```    
+12. 安装http-tools并添加认证用户（pass.db，nginx访问有认证）
+    ```
+    yum -y install httpd-tools
+    cd /usr/local/nginx/conf
+    htpasswd -c pass.db guestUser #确认密码，创建guestUser
+    # htpasswd -b pass.db user1 passwd1 #向认证文件中追加用户user1
+    # htpasswd -D pass.db user1 #从认证文件中删除指定的用户 
+    ```
     ---
-   13. [可选]配置gitweb
-   ```
-   find /usr/local/share --name gitweb.cgi
-   cd /usr/local/share/gitweb && ll /usr/local/share/gitweb
-   vi /etc/git/gitweb.conf
-   ```
-   14. [可选]修改gitweb.conf
+13. [可选]配置gitweb
+    ```
+    find /usr/local/share --name gitweb.cgi
+    cd /usr/local/share/gitweb && ll /usr/local/share/gitweb
+    vi /etc/git/gitweb.conf
+    ```
+14. [可选]修改gitweb.conf
    ```
    # path to git projects (<project>.git)
 	$projectroot = "/data/git";
@@ -232,12 +232,12 @@
 	$favicon = "static/git-favicon.png";
    ```
 
-   15. 启动nginx和fcgiwrap
+15. 启动nginx和fcgiwrap
    ```
    /usr/local/nginx/sbin/nginx
    /etc/init.d/fcgiwrap start
    ```
-   16. [可选]权限配置参考<https://blog.csdn.net/wang839305939/article/details/78194944>
+16. [可选]权限配置参考<https://blog.csdn.net/wang839305939/article/details/78194944>
 
 ----
 # git仓库迁移  保留提交记录
