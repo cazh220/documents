@@ -17,7 +17,7 @@ yum install -y git
 
 
 
-1. 远端分支回滚步骤
+3. 远端分支回滚步骤
    
 1、git checkout the_branch
 
