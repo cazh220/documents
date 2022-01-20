@@ -124,6 +124,7 @@
         ;;
     esac
    ```
+   
    8. 设置fcgiwrap权限并启动fcgiwrap
    ```
    chmod a+x /etc/init.d/fcgiwrap
