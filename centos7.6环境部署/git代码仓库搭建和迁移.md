@@ -233,10 +233,10 @@
     ```
 
 15. 启动nginx和fcgiwrap
-   ```
-   /usr/local/nginx/sbin/nginx
-   /etc/init.d/fcgiwrap start
-   ```
+    ```
+    /usr/local/nginx/sbin/nginx
+    /etc/init.d/fcgiwrap start
+    ```
 16. [可选]权限配置参考<https://blog.csdn.net/wang839305939/article/details/78194944>
 
 ----
