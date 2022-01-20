@@ -138,7 +138,7 @@
    vi gitrepo.com
    ```
 10. gitrepo.com配置如下（路径，名称可根据自己项目修改）
-   > 配置参考 [gitrepo.com](../files/gitrepo.com)
+    > 配置参考 [gitrepo.com](../files/gitrepo.com)
    ```
    server {
         listen      80;
@@ -203,7 +203,7 @@
     vi /etc/git/gitweb.conf
     ```
 14. [可选]修改gitweb.conf
-   ```
+    ```
    # path to git projects (<project>.git)
 	$projectroot = "/data/git";
 
@@ -230,7 +230,7 @@
 
 	# the 'favicon'
 	$favicon = "static/git-favicon.png";
-   ```
+    ```
 
 15. 启动nginx和fcgiwrap
    ```
