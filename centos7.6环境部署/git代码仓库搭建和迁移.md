@@ -132,7 +132,7 @@
    /etc/init.d/fcgiwrap start
    ```
    -----
-9.  配置代码仓库访问地址，nginx配置
+9. 配置代码仓库访问地址，nginx配置
    ```
    cd /usr/local/nginx/conf/servers
    vi gitrepo.com
