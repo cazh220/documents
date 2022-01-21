@@ -142,7 +142,7 @@
     ```
     server {
             listen      80;
-            server_name git.jsyinghuan.com;
+            server_name git.xxxxx.com;
             root /usr/local/doc/git;
 
             client_max_body_size 400m;
