@@ -84,7 +84,7 @@
    wget https://cdn.mysql.com/archives/mysql-8.0/mysql-8.0.18-1.el7.x86_64.rpm-bundle.tar
    tar -xvf mysql-8.0.18-1.el7.x86_64.rpm-bundle.tar
    ```
-   <img src="../images/mysql.jpg" width="400px" height="150px">
+   ![mysql解压信息](static/images/mysql.jpg)
 3. rpm -qa | grep mariadb 命令查看 mariadb 的安装包5; 卸载mariadb
    ```
    rpm -e mariadb-libs-5.5.68-1.el7.x86_64 --nodeps 
@@ -114,7 +114,7 @@
    # 立即生效
    FLUSH PRIVILEGES; 
    ```
-
+   ![mysql配置信息图示](static/images/mysqlconfig.png)
    <img src="../images/mysqlconfig.png" width="400px" height="600px">
 6. 配置远程连接（生产环境原则不允许，如果连的一定要做好权限设置）
    ```
