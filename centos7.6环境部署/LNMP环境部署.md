@@ -271,6 +271,13 @@
    ```
    ln -s /usr/local/redis/bin/redis-cli /usr/bin/redis 
    ```
+6. redis扩展安装
+   
+   将redis.so 复制到/usr/local/php/lib/php/extensions/no-debug-non-zts-20180731
+
+   开启php.ini的相关配置
+   
+   重启php服务
 
 
 ---
@@ -310,28 +317,28 @@
 
 9.  configure: error: xslt-config not found. Please reinstall the libxslt >= 1.1.0 distribution
     
-   解决：yum install -y libxslt-devel
+    解决：yum install -y libxslt-devel
 
 10. configure: error: Please reinstall the libzip distribution
 
-   解决： yum install -y libzip-devel
+    解决： yum install -y libzip-devel
 
 11. checking for libzip... configure: error: system libzip must be upgraded to version >= 0.11
 
-   解决： 
-   ```
-   yum remove -y libzip
-   
-   #下载编译安装
-   wget https://nih.at/libzip/libzip-1.2.0.tar.gz
-   tar -zxvf libzip-1.2.0.tar.gz
-   cd libzip-1.2.0
-   ./configure
-   make && make install
-   ``` 
-   >如果报错：configure: error: off_t undefined; check your library configuration
-   解决：
-   ```
+    解决： 
+    ```
+    yum remove -y libzip
+    
+    #下载编译安装
+    wget https://nih.at/libzip/libzip-1.2.0.tar.gz
+    tar -zxvf libzip-1.2.0.tar.gz
+    cd libzip-1.2.0
+    ./configure
+    make && make install
+    ``` 
+    >如果报错：configure: error: off_t undefined; check your library configuration
+    解决：
+    ```
     #添加搜索路径到配置文件
     echo '/usr/local/lib64
     /usr/local/lib
@@ -339,22 +346,24 @@
     /usr/lib64'>>/etc/ld.so.conf
     #然后 更新配置
     ldconfig -vndefined; check your library configuration
-  ```
+    ```
   >如果报错：
-  ```
-  /usr/local/include/zip.h:59:21: fatal error: zipconf.h: No such file or directory
-    #include <zipconf.h>
-                        ^
-    compilation terminated.
-    make: *** [ext/zip/php_zip.lo] Error 1
-  ```
-  解决：cp /usr/local/lib/libzip/include/zipconf.h /usr/local/include/zipconf.h
+
+    ```
+    /usr/local/include/zip.h:59:21: fatal error: zipconf.h: No such file or directory
+        #include <zipconf.h>
+                            ^
+        compilation terminated.
+        make: *** [ext/zip/php_zip.lo] Error 1
+    ```
+
+    解决：cp /usr/local/lib/libzip/include/zipconf.h /usr/local/include/zipconf.h
 
 > Mysql报错
 1. error: Failed dependencies:
 	libaio.so.1()(64bit) is needed by mysql-community-server-8.0.18-1.el7.x86_64
 
-   解决：yum -y install libaio
+    解决：yum -y install libaio
 
    
 
